@@ -4,9 +4,9 @@
 #include <curl/curl.h>
 
 #define MAX_CACHE_SIZE (1024*1024*8)
-#define ELIMAGE_URL "http://paste.edisonnotes.com"
+#define VINERGY_URL "http://paste.edisonnotes.com"
 
-char *elimage_url = ELIMAGE_URL;
+char *vinergy_url = VINERGY_URL;
 
 char* append_it(char *cptr, const char c)
 {
@@ -50,7 +50,7 @@ int main (int argc, char *argv[])
 	headerlist = curl_slist_append(headerlist, buf);
 	if(curl) {
 		/* what URL that receives this POST */
-		curl_easy_setopt(curl, CURLOPT_URL, elimage_url);
+		curl_easy_setopt(curl, CURLOPT_URL, vinergy_url);
 		if ( (argc == 2) && (!strcmp(argv[1], "noexpectheader")) )
 			/* only disable 100-continue header if explicitly requested */
 			curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headerlist);
